@@ -1,0 +1,22 @@
+version: "3.2"
+
+services:
+  selenium:
+    build:
+      context: .
+      dockerfile: ./selenium_docker_env/Dockerfile
+    ports:
+      - 4444:4444
+      - 5900:5900
+
+  python:
+    build:
+      context: .
+      dockerfile: ./python_docker_env/Dockerfile
+    depends_on:
+      - selenium
+    volumes:
+      - .:/var/end_to_end
+
+
+
