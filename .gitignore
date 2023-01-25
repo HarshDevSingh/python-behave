@@ -1,0 +1,6 @@
+.idea
+.utilities
+.wdm
+.DS_Store
+envs
+*__pycache__/
